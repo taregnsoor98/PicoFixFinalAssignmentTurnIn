@@ -1,0 +1,12 @@
+[Unit]
+Description=PICOFoxweb Web Server
+After=network.target
+
+[Service]
+ExecStart=/usr/local/bin/PICOFoxweb
+Restart=always
+User=nobody
+Group=nobody
+
+[Install]
+WantedBy=multi-user.target
