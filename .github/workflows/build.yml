@@ -6,14 +6,24 @@ on:
       - master
 
 jobs:
-  build-and-deploy:
+  build:
+    name: Build
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v3
-
       - name: Install dependencies
         run: sudo apt-get update && sudo apt-get install -y build-essential
-
       - name: Build with make
         run: make
+
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    needs: build   # Wait for 'build' job to finish successfully
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Deploy step placeholder
+        run: echo "Deploying application..."
+
