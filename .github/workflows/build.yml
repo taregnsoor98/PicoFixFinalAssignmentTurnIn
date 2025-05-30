@@ -3,7 +3,7 @@ name: C Build
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   build:
